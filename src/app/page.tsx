@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <section id="hero">
+      <section id="hero" className="snap-center">
         <Hero />
       </section>
     </>

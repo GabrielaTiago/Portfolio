@@ -1,5 +1,6 @@
 import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
+import { BackgroundCircles } from "./BackgroundCircles";
 
 export function Hero() {
   const [text] = useTypewriter({
@@ -13,10 +14,11 @@ export function Hero() {
     delaySpeed: 2000,
   });
   return (
-    <div className="flex">
+    <div className="h-screen flex flex-col items-center justify-center space-y-5 text-center overflow-hidden">
+      <BackgroundCircles />
       <h1>
         <span>{text}</span>
-        <Cursor cursorColor="#34ebcd" />
+        <Cursor cursorColor="#ffffff" />
       </h1>
     </div>
   );
