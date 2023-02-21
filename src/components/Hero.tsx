@@ -1,4 +1,4 @@
-
+import Link from "next/link";
 import { BackgroundCircles, Picture, Typewriter } from "../components";
 
 export function Hero() {
@@ -11,7 +11,20 @@ export function Hero() {
           Desenvolvedora Web Fullstack JR
         </h2>
         <Typewriter />
-
+        <nav>
+          <Link href="#about">
+            <button className="heroButton">Sobre</button>
+          </Link>
+          <Link href="#education">
+            <button className="heroButton">Educação</button>
+          </Link>
+          <Link href="#skills">
+            <button className="heroButton">Habilidades</button>
+          </Link>
+          <Link href="#projects">
+            <button className="heroButton">Projetos</button>
+          </Link>
+        </nav>
       </div>
     </div>
   );
