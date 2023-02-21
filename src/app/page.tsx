@@ -1,7 +1,13 @@
 "use client";
-
-import { Header } from "@/components";
+import { Header, Hero } from "@/components";
 
 export default function Home() {
-  return <><Header/></>;
+  return (
+    <>
+      <Header />
+      <section id="hero" className="snap-center">
+        <Hero />
+      </section>
+    </>
+  );
 }
