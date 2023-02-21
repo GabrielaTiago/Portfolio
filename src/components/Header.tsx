@@ -1,12 +1,24 @@
 import React from "react";
 import { SocialIcon } from "react-social-icons";
+import { motion } from "framer-motion";
 
-type Props = {};
-
-export function Header({}: Props) {
+export function Header() {
   return (
     <header className="max-w-7xl mx-auto p-5 sticky top-0 flex flex-row justify-between z-20">
-      <div className="flex flex-row items-center">
+      <motion.div
+        className="flex flex-row items-center"
+        initial={{
+          x: -500,
+          opacity: 0,
+          scale: 0.5,
+        }}
+        animate={{
+          x: 0,
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{ duration: 1.5 }}
+      >
         <SocialIcon
           className="hover:brightness-125"
           url="https://github.com/GabrielaTiago"
@@ -25,8 +37,21 @@ export function Header({}: Props) {
           fgColor="gray"
           bgColor="transparent"
         />
-      </div>
-      <div className="flex flex-row items-center text-gray-300 cursor-pointer">
+      </motion.div>
+      <motion.div
+        initial={{
+          x: 500,
+          opacity: 0,
+          scale: 0.5,
+        }}
+        animate={{
+          x: 0,
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{ duration: 1.5 }}
+        className="flex flex-row items-center text-gray-300 cursor-pointer"
+      >
         <SocialIcon
           className="cursor-pointer hover:brightness-125"
           network="email"
@@ -36,7 +61,7 @@ export function Header({}: Props) {
         <p className="uppercase hidden md:inline-flex text-sm text-gray-400 hover:brightness-90">
           Entre em contato
         </p>
-      </div>
+      </motion.div>
     </header>
   );
 }
