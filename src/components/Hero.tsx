@@ -1,25 +1,18 @@
-import React from "react";
-import { Cursor, useTypewriter } from "react-simple-typewriter";
-import { BackgroundCircles } from "./BackgroundCircles";
+
+import { BackgroundCircles,  Typewriter } from "../components";
 
 export function Hero() {
-  const [text] = useTypewriter({
-    words: [
-      "Olá, meu nome é Gabriela Tiago",
-      "Sou uma desenvolvedora web fullstack",
-      "<Apaixonada por tecnologia />",
-    ],
-    loop: true,
-    typeSpeed: 150,
-    delaySpeed: 2000,
-  });
   return (
-    <div className="h-screen flex flex-col items-center justify-center space-y-5 text-center overflow-hidden">
+    <div className="h-screen flex flex-col items-center justify-center text-center overflow-hidden">
       <BackgroundCircles />
-      <h1>
-        <span>{text}</span>
-        <Cursor cursorColor="#ffffff" />
-      </h1>
+
+      <div className="flex flex-col mt-4 gap-2 z-20">
+        <h2 className="uppercase text-sm text-gray-500 tracking-[11px]">
+          Desenvolvedora Web Fullstack JR
+        </h2>
+        <Typewriter />
+
+      </div>
     </div>
   );
 }
