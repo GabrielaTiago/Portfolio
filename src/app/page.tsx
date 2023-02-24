@@ -1,5 +1,5 @@
 "use client";
-import { About, Header, Hero } from "@/components";
+import { About, Education, Header, Hero } from "@/components";
 
 export default function Home() {
   return (
@@ -10,6 +10,9 @@ export default function Home() {
       </section>
       <section id="about" className="snap-center">
         <About />
+      </section>
+      <section id="education" className="snap-center">
+        <Education />
       </section>
     </>
   );
