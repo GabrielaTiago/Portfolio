@@ -7,5 +7,7 @@ export * from "./InstitutionPicture";
 export * from "./Header";
 export * from "./Hero";
 export * from "./Picture";
+export * from "./Skill";
+export * from "./Skills";
 export * from "./Slider";
 export * from "./Typewriter";
