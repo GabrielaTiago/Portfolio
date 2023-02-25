@@ -7,6 +7,8 @@ export * from "./InstitutionPicture";
 export * from "./Header";
 export * from "./Hero";
 export * from "./Picture";
+export * from "./Project";
+export * from "./Projects";
 export * from "./Skill";
 export * from "./Skills";
 export * from "./Slider";
