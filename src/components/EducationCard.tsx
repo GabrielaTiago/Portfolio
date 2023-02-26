@@ -8,10 +8,10 @@ export function EducationCard() {
 
       <div className="space-y-5">
         <div className="space-y-1">
-          <h4 className="text-2xl md:text-4xl font-light">
+          <h4 className="text-xl xss:text-2xl  md:text-4xl font-light">
             Universidade de Brasília
           </h4>
-          <h5 className="text-1xl md:text-2xl font-bold">
+          <h5 className="test-lg xs:text-1xl md:text-2xl font-bold">
             Engenharia de Software
           </h5>
         </div>

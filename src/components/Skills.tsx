@@ -12,17 +12,14 @@ export function Skills() {
       <h3 className="absolute top-24 uppercase tracking-[10px] text-gray-500 text-2xl md:tracking-[20px]">
         Habilidades
       </h3>
-      <div className="max-w-[370px] max-h-[350px] md:max-w-fit md:max-h-[480px] grid gap-5 grid-cols-5 md:grid-cols-6">
+      <motion.div
+        initial={{ opacity: 0, x: -200 }}
+        transition={{ duration: 1.5 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        className="max-w-[260px] h-min max-h-80 xss::max-w-[420px] xss:max-h-[350px] md:max-w-fit md:max-h-[580px] grid gap-3 xs:gap-5 grid-cols-5 xss:grid-cols-6 overflow-x-hidden overflow-y-scroll scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#32a889]/40"
+      >
         <Skill /> <Skill /> <Skill /> <Skill />
-        <Skill /> <Skill /> <Skill /> <Skill />
-        <Skill /> <Skill /> <Skill /> <Skill />
-        <Skill /> <Skill /> <Skill /> <Skill />
-        <Skill /> <Skill /> <Skill /> <Skill />
-        <Skill /> <Skill /> <Skill /> <Skill />
-        <Skill /> <Skill /> <Skill /> <Skill />
-        <Skill /> <Skill /> <Skill /> <Skill />
-        <Skill /> <Skill /> <Skill />
-      </div>
+      </motion.div>
     </motion.div>
   );
 }

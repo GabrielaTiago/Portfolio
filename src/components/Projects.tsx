@@ -19,7 +19,7 @@ export function Projects() {
           );
         })}
       </div>
-      <div className="absolute w-full h-[500px] top-[30%] bg-[#34ebcd]/10 left-0 -skew-y-12"></div>
+      <div className="absolute w-full h-[500px] top-[30%] bg-[#32a889]/10 left-0 -skew-y-12"></div>
     </div>
   );
 }

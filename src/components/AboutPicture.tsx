@@ -8,7 +8,7 @@ export function AboutPicture() {
       whileInView={{ x: 0, opacity: 1 }}
       viewport={{ once: true }}
       src="https://avatars.githubusercontent.com/u/77814822?v=4"
-      className="-mb-20 md:mb-0 w-56 h-56 flex-shrink-0 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"
+      className="hidden xs:block w-[120px] min-h-[120px] flex-shrink-0 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"
     />
   );
 }

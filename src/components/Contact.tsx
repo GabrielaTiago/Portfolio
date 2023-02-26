@@ -4,30 +4,30 @@ import { Form } from "@/components";
 
 export function Contact() {
   return (
-    <div className="relative h-screen px-[3%] mx-auto flex flex-col items-center justify-evenly text-center md:text-left md:flex-row">
+    <div className="relative h-screen p-[3%] mx-auto flex flex-col items-center justify-evenly text-center md:text-left md:flex-row">
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
         Contato
       </h3>
 
-      <div className="flex flex-col space-y-10">
-        <h4 className="text-2xl md:text-4xl font-semibold text-center">
+      <div className="pt-[35%] xss:pt-0 flex flex-col space-y-3 xss:space-y-10">
+        <h4 className="text-sm xss:text-2xl md:text-4xl font-semibold text-center">
           Eu tenho extamente o que você precisa.{" "}
-          <span className="underline decoration-[#34ebcd]/50">
+          <span className="underline decoration-[#32a889]/50">
             Vamos conversar.
           </span>
         </h4>
 
-        <div className=" space-y-4">
-          <div className="flex items-center justify-center space-x-5">
-            <FiMail size={22} color="#34ebcd" />
+        <div className="space-y-1 xss:space-y-4">
+          <div className="flex items-center justify-center space-x-2 xs:space-x-5 text-[13px] xss:text-lg">
+            <FiMail size={22} color="#32a889" />
             <p>gabrielatiagodearaujo@outlook.com</p>
           </div>
-          <div className="flex items-center justify-center space-x-5">
-            <FiSmartphone size={22} color="#34ebcd" />
+          <div className="flex items-center justify-center space-x-2 xs:space-x-5 text-[13px] xss:text-lg">
+            <FiSmartphone size={22} color="#32a889" />
             <p>+55 (62) 99176-9161</p>
           </div>
-          <div className="flex items-center justify-center space-x-5">
-            <IoLocationOutline size={22} color="#34ebcd" />
+          <div className="flex items-center justify-center space-x-2 xs:space-x-5 text-[13px] xss:text-lg">
+            <IoLocationOutline size={22} color="#32a889" />
             <p>Brasília, DF ,Brasil</p>
           </div>
         </div>

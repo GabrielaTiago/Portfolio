@@ -60,9 +60,9 @@ export function Form() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className=" w-fit mx-auto flex flex-col space-y-2"
+      className=" w-fit mx-auto flex flex-col space-y-1 xs:space-y-2"
     >
-      <div className="flex flex-col gap-2 md:flex-row ">
+      <div className="flex flex-col gap-1 xs:gap-2 md:flex-row ">
         <input
           className="contactInput"
           type="text"
@@ -94,7 +94,7 @@ export function Form() {
       <button
         type="submit"
         disabled={loading}
-        className="py-5 px-10 rounded-md text-lg text-gray-700 font-bold bg-[#34ebcd] hover:brightness-110 disabled:opacity-40"
+        className="py-1 xss:py-5 px-10 rounded-md text-sm xs:text-lg text-gray-700 font-bold bg-[#32a889] hover:brightness-110 disabled:opacity-40"
       >
         Enviar
       </button>
