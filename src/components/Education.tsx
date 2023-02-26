@@ -13,7 +13,7 @@ export function Education() {
         Educação
       </h3>
 
-      <div className="w-full flex space-x-5 snap-x snap-mandatory overflow-x-scroll">
+      <div className="w-full flex space-x-5 snap-x snap-mandatory overflow-x-scroll scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#32a889]/40">
         <EducationCard />
         <EducationCard />
         <EducationCard />

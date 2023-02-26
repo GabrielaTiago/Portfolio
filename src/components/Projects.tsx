@@ -8,7 +8,7 @@ export function Projects() {
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
         Projetos
       </h3>
-      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20">
+      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#32a889]/40">
         {projects.map((project, index) => {
           return (
             <Project
