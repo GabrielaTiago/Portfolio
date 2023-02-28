@@ -1,7 +1,12 @@
-import { Project } from "./Project";
+import { use } from "react";
+import { Project } from "@/components";
+import { Project as TProject } from "@/Interfaces/sanityInterfaces";
+import { fetchProjects } from "@/utils";
 
 export function Projects() {
-  const projects = [1, 2, 3, 4, 5];
+  const {
+    props: { projects },
+  } = use(getProjectsData());
 
   return (
     <div className="relative max-w-full h-screen px-[3%] mx-auto flex flex-col items-center justify-evenly text-left md:flex-row z-0 overflow-hidden">
@@ -10,11 +15,18 @@ export function Projects() {
       </h3>
       <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#32a889]/40">
         {projects.map((project, index) => {
+          const { _id, image, link, sumary, title, technologies } = project;
+
           return (
             <Project
-              key={project}
+              key={_id}
               index={index}
               numbOfProjects={projects.length}
+              image={image}
+              link={link}
+              sumary={sumary}
+              title={title}
+              technologies={technologies}
             />
           );
         })}
@@ -22,4 +34,12 @@ export function Projects() {
       <div className="absolute w-full h-[500px] top-[30%] bg-[#32a889]/10 left-0 -skew-y-12"></div>
     </div>
   );
+}
+
+async function getProjectsData() {
+  const projects: TProject[] = await fetchProjects();
+
+  return {
+    props: { projects },
+  };
 }
