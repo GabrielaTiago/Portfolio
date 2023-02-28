@@ -1,8 +1,14 @@
-import React from "react";
+import { use } from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
+import { Social } from "@/Interfaces/sanityInterfaces";
+import { fetchSocials } from "@/utils";
 
 export function Header() {
+  const {
+    props: { socials },
+  } = use(getSocialsData());
+
   return (
     <header className="max-w-7xl mx-auto p-[3%] sticky top-0 flex flex-row justify-between z-20">
       <motion.div
@@ -19,24 +25,19 @@ export function Header() {
         }}
         transition={{ duration: 1.5 }}
       >
-        <SocialIcon
-          className="hover:brightness-125"
-          url="https://github.com/GabrielaTiago"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          className="hover:brightness-125"
-          url="https://linkedin.com/in/gabrielatiago"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          className="hover:brightness-125"
-          url="https://instagram.com/gabstiago"
-          fgColor="gray"
-          bgColor="transparent"
-        />
+        {socials.map((social) => {
+          const { _id, url } = social;
+
+          return (
+            <SocialIcon
+              key={_id}
+              className="hover:brightness-125"
+              url={url}
+              fgColor="gray"
+              bgColor="transparent"
+            />
+          );
+        })}
       </motion.div>
       <motion.div
         initial={{
@@ -55,13 +56,24 @@ export function Header() {
         <SocialIcon
           className="cursor-pointer hover:brightness-125"
           network="email"
+          url="http://localhost:3000/#contact"
           fgColor="gray"
           bgColor="transparent"
         />
-        <p className="uppercase hidden md:inline-flex text-sm text-gray-400 hover:brightness-90">
-          Entre em contato
-        </p>
+        <a href="#contact">
+          <p className="uppercase hidden md:inline-flex text-sm text-gray-400 hover:brightness-90">
+            Entre em contato
+          </p>
+        </a>
       </motion.div>
     </header>
   );
+}
+
+async function getSocialsData() {
+  const socials: Social[] = await fetchSocials();
+
+  return {
+    props: { socials },
+  };
 }
