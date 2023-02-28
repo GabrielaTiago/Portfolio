@@ -1,8 +1,17 @@
+import { use } from "react";
 import { FiSmartphone, FiMail } from "react-icons/fi";
 import { IoLocationOutline } from "react-icons/io5";
 import { Form } from "@/components";
+import { PageInfo } from "@/Interfaces/sanityInterfaces";
+import { fetchPageInfo } from "@/utils";
 
 export function Contact() {
+  const {
+    props: { pageInfo },
+  } = use(getPageInfoData());
+
+  const { address, email, phoneNumber } = pageInfo;
+
   return (
     <div className="relative h-screen p-[3%] mx-auto flex flex-col items-center justify-evenly text-center md:text-left md:flex-row">
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
@@ -20,15 +29,15 @@ export function Contact() {
         <div className="space-y-1 xss:space-y-4">
           <div className="flex items-center justify-center space-x-2 xs:space-x-5 text-[13px] xss:text-lg">
             <FiMail size={22} color="#32a889" />
-            <p>gabrielatiagodearaujo@outlook.com</p>
+            <p>{email}</p>
           </div>
           <div className="flex items-center justify-center space-x-2 xs:space-x-5 text-[13px] xss:text-lg">
             <FiSmartphone size={22} color="#32a889" />
-            <p>+55 (62) 99176-9161</p>
+            <p>{phoneNumber}</p>
           </div>
           <div className="flex items-center justify-center space-x-2 xs:space-x-5 text-[13px] xss:text-lg">
             <IoLocationOutline size={22} color="#32a889" />
-            <p>Brasília, DF ,Brasil</p>
+            <p>{address}</p>
           </div>
         </div>
 
@@ -36,4 +45,12 @@ export function Contact() {
       </div>
     </div>
   );
+}
+
+async function getPageInfoData() {
+  const pageInfo: PageInfo = await fetchPageInfo();
+
+  return {
+    props: { pageInfo },
+  };
 }
