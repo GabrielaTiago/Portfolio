@@ -6,7 +6,7 @@ const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
 const apiVersion = process.env.NEXT_PUBLIC_SANITY_API_VERSION!;
 const useCdn = process.env.NODE_ENV === "production";
 
-export const config = {
+const config = {
   dataset,
   projectId,
   apiVersion,
@@ -15,8 +15,4 @@ export const config = {
 
 export const sanityClient = createClient(config);
 
-export const urlFor = (source: any) => {
-    createImageBuilder(config).image(source);
-}
-
-
+export const urlFor = (source: any) => createImageBuilder(config).image(source);
