@@ -30,10 +30,10 @@ export function Form() {
 
     try {
       await emailjs.send(
-        "service_okxr4vu",
-        "template_y32qy06",
+        process.env.NEXT_PUBLIC_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
         templateKeys,
-        "BziRpwGBWgGvU7URO"
+        process.env.NEXT_PUBLIC_KEY
       );
       Swal.fire({
         icon: "success",
