@@ -4,10 +4,18 @@ import { Skill } from "@/components";
 import { fetchSkills } from "@/utils";
 import { Skill as TSkill } from "@/Interfaces/sanityInterfaces";
 
+async function getSkillsData() {
+  const skills: TSkill[] = await fetchSkills();
+
+  return {
+    skills,
+  };
+}
+
+const data = getSkillsData();
+
 export function Skills() {
-  const {
-    props: { skills },
-  } = use(getSkillsData());
+  const { skills } = use(data);
 
   return (
     <motion.div
@@ -32,12 +40,4 @@ export function Skills() {
       </motion.div>
     </motion.div>
   );
-}
-
-async function getSkillsData() {
-  const skills: TSkill[] = await fetchSkills();
-
-  return {
-    props: { skills },
-  };
 }

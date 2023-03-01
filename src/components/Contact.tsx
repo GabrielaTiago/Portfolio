@@ -5,11 +5,18 @@ import { Form } from "@/components";
 import { PageInfo } from "@/Interfaces/sanityInterfaces";
 import { fetchPageInfo } from "@/utils";
 
-export function Contact() {
-  const {
-    props: { pageInfo },
-  } = use(getPageInfoData());
+async function getPageInfoData() {
+  const pageInfo: PageInfo = await fetchPageInfo();
 
+  return {
+    pageInfo,
+  };
+}
+
+const data = getPageInfoData();
+
+export function Contact() {
+  const { pageInfo } = use(data);
   const { address, email, phoneNumber } = pageInfo;
 
   return (
@@ -45,12 +52,4 @@ export function Contact() {
       </div>
     </div>
   );
-}
-
-async function getPageInfoData() {
-  const pageInfo: PageInfo = await fetchPageInfo();
-
-  return {
-    props: { pageInfo },
-  };
 }
