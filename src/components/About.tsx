@@ -4,10 +4,18 @@ import { AboutPicture } from "@/components";
 import { PageInfo } from "@/Interfaces/sanityInterfaces";
 import { fetchPageInfo } from "@/utils";
 
+async function getPageInfoData() {
+  const pageInfo: PageInfo = await fetchPageInfo();
+
+  return {
+    pageInfo,
+  };
+}
+
+const data = getPageInfoData();
+
 export function About() {
-  const {
-    props: { pageInfo },
-  } = use(getPageInfoData());
+  const { pageInfo } = use(data);
 
   const { backgroundInfo, profilePicture } = pageInfo;
 
@@ -45,12 +53,4 @@ export function About() {
       </div>
     </motion.div>
   );
-}
-
-async function getPageInfoData() {
-  const pageInfo: PageInfo = await fetchPageInfo();
-
-  return {
-    props: { pageInfo },
-  };
 }

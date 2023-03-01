@@ -3,10 +3,18 @@ import { Project } from "@/components";
 import { Project as TProject } from "@/Interfaces/sanityInterfaces";
 import { fetchProjects } from "@/utils";
 
+async function getProjectsData() {
+  const projects: TProject[] = await fetchProjects();
+
+  return {
+    projects,
+  };
+}
+
+const data = getProjectsData();
+
 export function Projects() {
-  const {
-    props: { projects },
-  } = use(getProjectsData());
+  const { projects } = use(data);
 
   return (
     <div className="relative max-w-full h-screen px-[3%] mx-auto flex flex-col items-center justify-evenly text-left md:flex-row z-0 overflow-hidden">
@@ -34,12 +42,4 @@ export function Projects() {
       <div className="absolute w-full h-[500px] top-[30%] bg-[#32a889]/10 left-0 -skew-y-12"></div>
     </div>
   );
-}
-
-async function getProjectsData() {
-  const projects: TProject[] = await fetchProjects();
-
-  return {
-    props: { projects },
-  };
 }

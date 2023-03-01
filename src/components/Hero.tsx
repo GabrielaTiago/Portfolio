@@ -3,10 +3,18 @@ import { PageInfo } from "@/Interfaces/sanityInterfaces";
 import { fetchPageInfo } from "@/utils";
 import { BackgroundCircles, Picture, Typewriter } from "../components";
 
+async function getPageInfoData() {
+  const pageInfo: PageInfo = await fetchPageInfo();
+
+  return {
+    pageInfo,
+  };
+}
+
+const data = getPageInfoData();
+
 export function Hero() {
-  const {
-    props: { pageInfo },
-  } = use(getPageInfoData());
+  const { pageInfo } = use(data);
 
   const { name, role, heroImage } = pageInfo;
 
@@ -36,12 +44,4 @@ export function Hero() {
       </div>
     </div>
   );
-}
-
-async function getPageInfoData() {
-  const pageInfo: PageInfo = await fetchPageInfo();
-
-  return {
-    props: { pageInfo },
-  };
 }

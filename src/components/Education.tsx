@@ -4,10 +4,18 @@ import { EducationCard } from "@/components";
 import { Education as TEducation } from "@/Interfaces/sanityInterfaces";
 import { fetchEducation } from "@/utils";
 
+async function getEducationData() {
+  const education: TEducation[] = await fetchEducation();
+
+  return {
+    education,
+  };
+}
+
+const data = getEducationData();
+
 export function Education() {
-  const {
-    props: { education },
-  } = use(getEducationData());
+  const { education } = use(data);
 
   return (
     <motion.div
@@ -48,12 +56,4 @@ export function Education() {
       </div>
     </motion.div>
   );
-}
-
-async function getEducationData() {
-  const education: TEducation[] = await fetchEducation();
-
-  return {
-    props: { education },
-  };
 }
