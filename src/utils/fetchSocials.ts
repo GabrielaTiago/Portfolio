@@ -1,12 +1,17 @@
 import { Social } from "@/Interfaces/sanityInterfaces";
 
 export const fetchSocials = async () => {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/getSocials`
-  );
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/getSocials`
+    );
 
-  const data = await response.json();
-  const socials: Social[] = data.socials;
+    const data = await response.json();
+    const socials: Social[] = data.socials;
 
-  return socials;
+    return socials;
+  } catch (error) {
+    console.error(error);
+    throw new Error("Failed to fetch socials data");
+  }
 };
