@@ -12,7 +12,7 @@ export function Contact({ pageInfo }: PageInfoData) {
         Contato
       </h3>
 
-      <div className="pt-[35%] xss:pt-0 flex flex-col space-y-3 xss:space-y-10">
+      <div className="pt-[10%] md:[5%] flex flex-col space-y-[3%]">
         <h4 className="text-sm xss:text-2xl md:text-4xl font-semibold text-center">
           Eu tenho extamente o que você precisa.{" "}
           <span className="underline decoration-[#32a889]/50">
@@ -20,17 +20,17 @@ export function Contact({ pageInfo }: PageInfoData) {
           </span>
         </h4>
 
-        <div className="space-y-1 xss:space-y-4">
+        <div className="flex flex-col gap-1 xss:gap-2 ">
           <div className="flex items-center justify-center space-x-2 xs:space-x-5 text-[13px] xss:text-lg">
-            <FiMail size={22} color="#32a889" />
+            <FiMail size={20} color="#32a889" />
             <p>{email}</p>
           </div>
           <div className="flex items-center justify-center space-x-2 xs:space-x-5 text-[13px] xss:text-lg">
-            <FiSmartphone size={22} color="#32a889" />
+            <FiSmartphone size={20} color="#32a889" />
             <p>{phoneNumber}</p>
           </div>
           <div className="flex items-center justify-center space-x-2 xs:space-x-5 text-[13px] xss:text-lg">
-            <IoLocationOutline size={22} color="#32a889" />
+            <IoLocationOutline size={20} color="#32a889" />
             <p>{address}</p>
           </div>
         </div>

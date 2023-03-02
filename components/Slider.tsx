@@ -13,7 +13,7 @@ export function Slider({ topics }: Props) {
   };
 
   return (
-    <ul className="relative w-full text-sm xl:text-lg list-disc">
+    <ul className="relative w-full text-[10px] md:text-[14px] xl:text-1lg list-disc">
       <li className="ml-5">{topics[currentIndex]}</li>
       <div className="w-full flex items-center justify-center py-2 ">
         {topics.map((_, index) => {
