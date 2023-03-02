@@ -1,11 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { groq } from "next-sanity";
 import { sanityClient } from "./sanity";
-import { ISocial } from "../../models/sanity";
-
-type SocialData = {
-  socials: ISocial[];
-};
+import { ISocial, SocialData } from "../../models";
 
 const query = groq`
     *[_type == "social"]
