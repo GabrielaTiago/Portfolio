@@ -1,10 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { groq } from "next-sanity";
 import { sanityClient } from "./sanity";
-import { Social } from "../../Interfaces/sanityInterfaces";
+import { ISocial } from "../../models/sanity";
 
 type SocialData = {
-  socials: Social[];
+  socials: ISocial[];
 };
 
 const query = groq`
@@ -15,7 +15,7 @@ export default async function handlerSocials(
   req: NextApiRequest,
   res: NextApiResponse<SocialData>
 ) {
-  const socials: Social[] = await sanityClient.fetch(query);
+  const socials: ISocial[] = await sanityClient.fetch(query);
 
   res.status(200).json({ socials });
 }

@@ -1,4 +1,4 @@
-import { PageInfo } from "../Interfaces/sanityInterfaces";
+import { IPageInfo } from "../models/sanity";
 
 export const fetchPageInfo = async () => {
   const response = await fetch(
@@ -6,7 +6,7 @@ export const fetchPageInfo = async () => {
   );
 
   const data = await response.json();
-  const pageInfo: PageInfo = data.pageInfo;
+  const pageInfo: IPageInfo = data.pageInfo;
 
   return pageInfo;
 };

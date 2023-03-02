@@ -1,16 +1,16 @@
 import { motion } from "framer-motion";
-import { Image as TImage, Skill } from "../Interfaces/sanityInterfaces";
+import { IImage, ISkill } from "../models/sanity";
 import { urlFor } from "../pages/api/sanity";
 import Image from "next/image";
 
 type Props = {
   index: number;
   numbOfProjects: number;
-  image: TImage;
+  image: IImage;
   link: string;
   sumary: string;
   title: string;
-  technologies: Skill[];
+  technologies: ISkill[];
 };
 
 export function Project({

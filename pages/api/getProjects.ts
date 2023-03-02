@@ -1,10 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { groq } from "next-sanity";
 import { sanityClient } from "./sanity";
-import { Project } from "../../Interfaces/sanityInterfaces";
+import { IProject } from "../../models/sanity";
 
 type ProjectData = {
-  projects: Project[];
+  projects: IProject[];
 };
 
 const query = groq`
@@ -18,7 +18,7 @@ export default async function handlerProjects(
   req: NextApiRequest,
   res: NextApiResponse<ProjectData>
 ) {
-  const projects: Project[] = await sanityClient.fetch(query);
+  const projects: IProject[] = await sanityClient.fetch(query);
 
   res.status(200).json({ projects });
 }

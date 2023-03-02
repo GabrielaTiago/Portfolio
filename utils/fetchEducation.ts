@@ -1,4 +1,4 @@
-import { Education } from "../Interfaces/sanityInterfaces";
+import { Education } from "../models/sanity";
 
 export const fetchEducation = async () => {
   const response = await fetch(

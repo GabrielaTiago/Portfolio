@@ -1,4 +1,4 @@
-import { Social } from "../Interfaces/sanityInterfaces";
+import { ISocial } from "../models/sanity";
 
 export const fetchSocials = async () => {
   const response = await fetch(
@@ -6,7 +6,7 @@ export const fetchSocials = async () => {
   );
 
   const data = await response.json();
-  const socials: Social[] = data.socials;
+  const socials: ISocial[] = data.socials;
 
   return socials;
 };

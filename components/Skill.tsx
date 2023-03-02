@@ -1,13 +1,12 @@
 import Image from "next/image";
-import { Image as TImage } from "../Interfaces/sanityInterfaces";
+import { IImage } from "../models/sanity";
 import { urlFor } from "../pages/api/sanity";
 
 type Props = {
   title: string;
-  image: TImage;
+  image: IImage;
   time: string;
 };
-
 
 export function Skill({ title, image, time }: Props) {
   return (

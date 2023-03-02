@@ -1,8 +1,8 @@
 import { Project } from "../components";
-import { Project as TProject } from "../Interfaces/sanityInterfaces";
+import { IProject } from "../models/sanity";
 
 type Props = {
-  projects: TProject[];
+  projects: IProject[];
 };
 
 export function Projects({ projects }: Props) {

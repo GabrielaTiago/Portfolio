@@ -1,8 +1,8 @@
-import { PageInfo } from "../Interfaces/sanityInterfaces";
+import { IPageInfo } from "../models/sanity";
 import { BackgroundCircles, Picture, Typewriter } from "../components";
 
 type Props = {
-  pageInfo: PageInfo;
+  pageInfo: IPageInfo;
 };
 
 export function Hero({ pageInfo }: Props) {

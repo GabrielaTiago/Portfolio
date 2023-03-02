@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { Skill } from "../components";
-import { Skill as TSkill } from "../Interfaces/sanityInterfaces";
+import { ISkill } from "../models/sanity";
 
 type Props = {
-  skills: TSkill[];
+  skills: ISkill[];
 };
 
 export function Skills({ skills }: Props) {

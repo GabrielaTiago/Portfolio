@@ -9,12 +9,12 @@ import {
   Skills,
 } from "../components";
 import {
-  Education as TEducation,
-  PageInfo,
-  Project,
-  Skill,
-  Social,
-} from "../Interfaces/sanityInterfaces";
+  IEducation,
+  IPageInfo,
+  IProject,
+  ISkill,
+  ISocial,
+} from "../models/sanity";
 import {
   fetchEducation,
   fetchPageInfo,
@@ -24,20 +24,14 @@ import {
 } from "../utils";
 
 type Props = {
-  pageInfo: PageInfo;
-  education: TEducation[];
-  skills: Skill[];
-  projects: Project[];
-  socials: Social[];
+  pageInfo: IPageInfo;
+  education: IEducation[];
+  skills: ISkill[];
+  projects: IProject[];
+  socials: ISocial[];
 };
 
-const Home = ({
-  pageInfo,
-  education,
-  skills,
-  projects,
-  socials,
-}: Props) => {
+const Home = ({ pageInfo, education, skills, projects, socials }: Props) => {
   return (
     <div className="h-screen bg-[rgb(36,36,36)] text-white snap-y snap-mandatory z-0 overflow-x-hidden overflow-y-scroll scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#32a889]/40">
       <Header socials={socials} />
@@ -45,7 +39,7 @@ const Home = ({
         <Hero pageInfo={pageInfo} />
       </section>
       <section id="about" className="snap-center">
-        <About pageInfo={pageInfo}/>
+        <About pageInfo={pageInfo} />
       </section>
       <section id="education" className="snap-center">
         <Education education={education} />
@@ -66,11 +60,11 @@ const Home = ({
 export default Home;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const pageInfo: PageInfo = await fetchPageInfo();
-  const education: TEducation[] = await fetchEducation();
-  const skills: Skill[] = await fetchSkills();
-  const projects: Project[] = await fetchProjects();
-  const socials: Social[] = await fetchSocials();
+  const pageInfo: IPageInfo = await fetchPageInfo();
+  const education: IEducation[] = await fetchEducation();
+  const skills: ISkill[] = await fetchSkills();
+  const projects: IProject[] = await fetchProjects();
+  const socials: ISocial[] = await fetchSocials();
 
   return {
     props: {
@@ -80,6 +74,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       projects,
       socials,
     },
-    revalidate: 120
+    revalidate: 120,
   };
 };

@@ -1,10 +1,10 @@
 import { FiSmartphone, FiMail } from "react-icons/fi";
 import { IoLocationOutline } from "react-icons/io5";
 import { Form } from "../components";
-import { PageInfo } from "../Interfaces/sanityInterfaces";
+import { IPageInfo } from "../models/sanity";
 
 type Props = {
-  pageInfo: PageInfo;
+  pageInfo: IPageInfo;
 };
 
 export function Contact({ pageInfo }: Props) {

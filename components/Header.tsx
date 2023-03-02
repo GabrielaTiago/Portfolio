@@ -1,9 +1,9 @@
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
-import { Social } from "../Interfaces/sanityInterfaces";
+import { ISocial } from "../models/sanity";
 
 type Props = {
-  socials: Social[];
+  socials: ISocial[];
 };
 
 export function Header({ socials }: Props) {

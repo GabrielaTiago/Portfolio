@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { Image } from "../Interfaces/sanityInterfaces";
+import { IImage } from "../models/sanity";
 import { urlFor } from "../pages/api/sanity";
 
 type Props = {
-  image: Image;
+  image: IImage;
 };
 
 export function AboutPicture({ image }: Props) {

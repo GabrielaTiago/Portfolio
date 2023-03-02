@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { EducationCard } from "../components";
-import { Education as TEducation } from "../Interfaces/sanityInterfaces";
+import { IEducation } from "../models/sanity";
 
 type Props = {
-  education: TEducation[];
+  education: IEducation[];
 };
 
 export function Education({ education }: Props) {

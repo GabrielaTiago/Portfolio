@@ -1,4 +1,4 @@
-import { Project } from "../Interfaces/sanityInterfaces";
+import { IProject } from "../models/sanity";
 
 export const fetchProjects = async () => {
   const response = await fetch(
@@ -6,7 +6,7 @@ export const fetchProjects = async () => {
   );
 
   const data = await response.json();
-  const projects: Project[] = data.projects;
+  const projects: IProject[] = data.projects;
 
   return projects;
 };

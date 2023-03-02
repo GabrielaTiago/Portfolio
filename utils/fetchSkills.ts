@@ -1,4 +1,4 @@
-import { Skill } from "../Interfaces/sanityInterfaces";
+import { ISkill } from "../models/sanity";
 
 export const fetchSkills = async () => {
   const response = await fetch(
@@ -6,7 +6,7 @@ export const fetchSkills = async () => {
   );
 
   const data = await response.json();
-  const skills: Skill[] = data.skills;
+  const skills: ISkill[] = data.skills;
 
   return skills;
 };

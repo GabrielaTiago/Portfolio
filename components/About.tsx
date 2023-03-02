@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { AboutPicture } from "../components";
-import { PageInfo } from "../Interfaces/sanityInterfaces";
+import { IPageInfo } from "../models/sanity";
 
 type Props = {
-  pageInfo: PageInfo;
+  pageInfo: IPageInfo;
 };
 
 export function About({ pageInfo }: Props) {
