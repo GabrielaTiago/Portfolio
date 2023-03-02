@@ -15,7 +15,7 @@ export interface IImage {
 
 export interface IPageInfo extends SanityBody {
   _type: "pageInfo";
-  name: string;
+  description: string[];
   role: string;
   profilePicture: IImage;
   heroImage: IImage;

@@ -1,15 +1,12 @@
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 
 type Props = {
-  name: string;
+  description: string[];
 };
 
-export function Typewriter({ name }: Props) {
+export function Typewriter({ description }: Props) {
   const [text] = useTypewriter({
-    words: [
-      `Olá, meu nome é ${name}`, 
-      "<ApaixonadaPorTecnologia />"
-    ],
+    words: description,
     loop: true,
     typeSpeed: 150,
     delaySpeed: 2000,
