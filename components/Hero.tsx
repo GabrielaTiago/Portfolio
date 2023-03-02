@@ -1,11 +1,7 @@
-import { PageInfo } from "../Interfaces/sanityInterfaces";
 import { BackgroundCircles, Picture, Typewriter } from "../components";
+import { PageInfoData } from "../models";
 
-type Props = {
-  pageInfo: PageInfo;
-};
-
-export function Hero({ pageInfo }: Props) {
+export function Hero({ pageInfo }: PageInfoData) {
   const { name, role, heroImage } = pageInfo;
 
   return (

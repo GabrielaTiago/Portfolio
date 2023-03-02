@@ -1,12 +1,8 @@
 import { motion } from "framer-motion";
 import { EducationCard } from "../components";
-import { Education as TEducation } from "../Interfaces/sanityInterfaces";
+import { EducationData } from "../models";
 
-type Props = {
-  education: TEducation[];
-};
-
-export function Education({ education }: Props) {
+export function Education({ education }: EducationData) {
   return (
     <motion.div
       initial={{ opacity: 0 }}

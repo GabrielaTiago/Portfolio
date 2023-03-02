@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { Image as TImage } from "../Interfaces/sanityInterfaces";
+import { IImage } from "../models/sanity";
 import { urlFor } from "../pages/api/sanity";
 
 type Props = {
-  image: TImage;
+  image: IImage;
 };
 
 export function Picture({ image }: Props) {

@@ -1,12 +1,8 @@
 import { motion } from "framer-motion";
 import { Skill } from "../components";
-import { Skill as TSkill } from "../Interfaces/sanityInterfaces";
+import { SkillsData } from "../models";
 
-type Props = {
-  skills: TSkill[];
-};
-
-export function Skills({ skills }: Props) {
+export function Skills({ skills }: SkillsData) {
   return (
     <motion.div
       initial={{ opacity: 0 }}

@@ -1,14 +1,14 @@
 import Image from "next/image";
 import { InstitutionPicture, Slider } from "../components";
-import { Image as TImage, Skill } from "../Interfaces/sanityInterfaces";
+import { IImage, ISkill } from "../models/sanity";
 import { urlFor } from "../pages/api/sanity";
 import { formatDate } from "../utils";
 
 type Props = {
-  institutionPicture: TImage;
+  institutionPicture: IImage;
   institution: string;
   course: string;
-  technologies: Skill[];
+  technologies: ISkill[];
   dateStart: Date;
   dateEnd: Date;
   topics: string[];

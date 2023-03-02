@@ -1,12 +1,8 @@
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
-import { Social } from "../Interfaces/sanityInterfaces";
+import { SocialData } from "../models";
 
-type Props = {
-  socials: Social[];
-};
-
-export function Header({ socials }: Props) {
+export function Header({ socials }: SocialData) {
   return (
     <header className="max-w-7xl mx-auto p-[3%] sticky top-0 flex flex-row justify-between z-20">
       <motion.div

@@ -1,11 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { groq } from "next-sanity";
 import { sanityClient } from "./sanity";
-import { Skill } from "../../Interfaces/sanityInterfaces";
-
-type SkillData = {
-  skills: Skill[];
-};
+import { ISkill, SkillsData } from "../../models";
 
 const query = groq`
     *[_type == "skill"]
@@ -13,9 +9,9 @@ const query = groq`
 
 export default async function handlerSkills(
   req: NextApiRequest,
-  res: NextApiResponse<SkillData>
+  res: NextApiResponse<SkillsData>
 ) {
-  const skills: Skill[] = await sanityClient.fetch(query);
+  const skills: ISkill[] = await sanityClient.fetch(query);
 
   res.status(200).json({ skills });
 }

@@ -5,7 +5,7 @@ interface SanityBody {
   _updatedAt: string;
 }
 
-export interface Image {
+export interface IImage {
   _type: "image";
   asset: {
     _ref: string;
@@ -13,49 +13,47 @@ export interface Image {
   };
 }
 
-export interface PageInfo extends SanityBody {
+export interface IPageInfo extends SanityBody {
   _type: "pageInfo";
   name: string;
   role: string;
-  profilePicture: Image;
-  heroImage: Image;
+  profilePicture: IImage;
+  heroImage: IImage;
   backgroundInfo: string[];
   phoneNumber: string;
   email: string;
   address: string;
 }
 
-export interface Social extends SanityBody {
+export interface ISocial extends SanityBody {
   _type: "social";
   title: string;
   url: string;
 }
 
-export interface Education extends SanityBody {
+export interface IEducation extends SanityBody {
   _type: "education";
-  institutionPicture: Image;
+  institutionPicture: IImage;
   institution: string;
   course: string;
   dateStart: Date;
   dateEnd: Date;
-  technologies: Skill[];
+  technologies: ISkill[];
   topics: string[];
 }
 
-export interface Skill extends SanityBody {
+export interface ISkill extends SanityBody {
   _type: "skill";
   title: string;
-  image: Image;
+  image: IImage;
   time: string;
 }
 
-export interface Project extends SanityBody {
+export interface IProject extends SanityBody {
   _type: "project";
   title: string;
-  image: Image;
+  image: IImage;
   link: string;
   sumary: string;
-  technologies: Skill[];
+  technologies: ISkill[];
 }
-
-

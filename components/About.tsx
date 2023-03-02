@@ -1,12 +1,8 @@
 import { motion } from "framer-motion";
 import { AboutPicture } from "../components";
-import { PageInfo } from "../Interfaces/sanityInterfaces";
+import { PageInfoData } from "../models";
 
-type Props = {
-  pageInfo: PageInfo;
-};
-
-export function About({ pageInfo }: Props) {
+export function About({ pageInfo }: PageInfoData) {
   const { backgroundInfo, profilePicture } = pageInfo;
 
   return (
