@@ -16,12 +16,12 @@ import {
   ISocial,
 } from "../models/sanity";
 import {
-  fetchEducation,
-  fetchPageInfo,
-  fetchProjects,
-  fetchSkills,
-  fetchSocials,
-} from "../utils";
+  getEducation,
+  getPageInfo,
+  getProjects,
+  getSkills,
+  getSocials,
+} from "../services";
 
 type Props = {
   pageInfo: IPageInfo;
@@ -60,11 +60,11 @@ const Home = ({ pageInfo, education, skills, projects, socials }: Props) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const pageInfo: IPageInfo = await fetchPageInfo();
-  const education: IEducation[] = await fetchEducation();
-  const skills: ISkill[] = await fetchSkills();
-  const projects: IProject[] = await fetchProjects();
-  const socials: ISocial[] = await fetchSocials();
+  const pageInfo: IPageInfo = await getPageInfo();
+  const education: IEducation[] = await getEducation();
+  const skills: ISkill[] = await getSkills();
+  const projects: IProject[] = await getProjects();
+  const socials: ISocial[] = await getSocials();
 
   return {
     props: {
