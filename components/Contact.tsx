@@ -1,13 +1,9 @@
 import { FiSmartphone, FiMail } from "react-icons/fi";
 import { IoLocationOutline } from "react-icons/io5";
 import { Form } from "../components";
-import { IPageInfo } from "../models/sanity";
+import { PageInfoData } from "../models";
 
-type Props = {
-  pageInfo: IPageInfo;
-};
-
-export function Contact({ pageInfo }: Props) {
+export function Contact({ pageInfo }: PageInfoData) {
   const { address, email, phoneNumber } = pageInfo;
 
   return (

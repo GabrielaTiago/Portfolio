@@ -1,11 +1,7 @@
 import { Project } from "../components";
-import { IProject } from "../models/sanity";
+import { ProjectsData } from "../models";
 
-type Props = {
-  projects: IProject[];
-};
-
-export function Projects({ projects }: Props) {
+export function Projects({ projects }: ProjectsData) {
   return (
     <div className="relative max-w-full h-screen px-[3%] mx-auto flex flex-col items-center justify-evenly text-left md:flex-row z-0 overflow-hidden">
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
