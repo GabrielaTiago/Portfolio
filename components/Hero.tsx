@@ -2,7 +2,7 @@ import { BackgroundCircles, Picture, Typewriter } from "../components";
 import { PageInfoData } from "../models";
 
 export function Hero({ pageInfo }: PageInfoData) {
-  const { name, role, heroImage } = pageInfo;
+  const { description, role, heroImage } = pageInfo;
 
   return (
     <div className="h-screen px-[3%] flex flex-col items-center justify-center text-center overflow-hidden">
@@ -12,7 +12,7 @@ export function Hero({ pageInfo }: PageInfoData) {
         <h2 className="uppercase text-sm text-gray-500 tracking-[9px]  md:tracking-[11px]">
           {role}
         </h2>
-        <Typewriter name={name} />
+        <Typewriter description={description} />
         <nav className="flex flex-col items-center justify-center md:flex-row">
           <a href="#about">
             <button className="heroButton">Sobre</button>

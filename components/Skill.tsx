@@ -10,7 +10,7 @@ type Props = {
 
 export function Skill({ title, image, time }: Props) {
   return (
-    <div className="relative flex cursor-pointer hover:group group max-w-[50px] max-h-[50px] md:max-w-[70px] md:max-h-[70px]">
+    <div className="relative flex cursor-pointer hover:group group max-w-[50px] max-h-[50px] md:max-w-[65px] md:max-h-[65px]">
       <Image
         src={urlFor(image).url()}
         alt={`${title} icon`}

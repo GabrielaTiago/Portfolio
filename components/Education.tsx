@@ -14,7 +14,7 @@ export function Education({ education }: EducationData) {
         Educação
       </h3>
 
-      <div className="w-full pt-[15%] xss:pt-0 flex space-x-5 snap-x snap-mandatory overflow-x-scroll scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#32a889]/40">
+      <div className="w-full h-max pt-[15%] xss:pt-0 flex space-x-5 snap-x snap-mandatory overflow-x-scroll scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#32a889]/40">
         {education.map((value) => {
           const {
             _id,

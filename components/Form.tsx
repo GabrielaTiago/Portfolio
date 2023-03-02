@@ -94,7 +94,7 @@ export function Form() {
       <button
         type="submit"
         disabled={loading}
-        className="py-1 xss:py-5 px-10 rounded-md text-sm xs:text-lg text-gray-700 font-bold bg-[#32a889] hover:brightness-110 disabled:opacity-40"
+        className="py-1 xss:py-2 md:py-5 px-10 rounded-md text-sm xs:text-lg text-gray-700 font-bold bg-[#32a889] hover:brightness-110 disabled:opacity-40"
       >
         Enviar
       </button>

@@ -14,7 +14,7 @@ export function AboutPicture({ image }: Props) {
       whileInView={{ x: 0, opacity: 1 }}
       viewport={{ once: true }}
       src={urlFor(image).url()}
-      className="hidden xs:block w-[120px] min-h-[120px] flex-shrink-0 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]"
+      className="hidden xs:block w-[120px] min-h-[120px] flex-shrink-0 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[380px] xl:h-[450px]"
     />
   );
 }
