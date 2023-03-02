@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { Image as TImage, Skill } from "@/Interfaces/sanityInterfaces";
-import { urlFor } from "@/pages/api/sanity";
+import { Image as TImage, Skill } from "../Interfaces/sanityInterfaces";
+import { urlFor } from "../pages/api/sanity";
 import Image from "next/image";
 
 type Props = {

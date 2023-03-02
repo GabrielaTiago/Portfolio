@@ -1,4 +1,4 @@
-import { PageInfo } from "@/Interfaces/sanityInterfaces";
+import { PageInfo } from "../Interfaces/sanityInterfaces";
 
 export const fetchPageInfo = async () => {
   const response = await fetch(

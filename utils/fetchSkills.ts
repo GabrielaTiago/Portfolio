@@ -1,4 +1,4 @@
-import { Skill } from "@/Interfaces/sanityInterfaces";
+import { Skill } from "../Interfaces/sanityInterfaces";
 
 export const fetchSkills = async () => {
   const response = await fetch(

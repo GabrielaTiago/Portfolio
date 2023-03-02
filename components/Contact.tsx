@@ -1,22 +1,13 @@
-import { use } from "react";
 import { FiSmartphone, FiMail } from "react-icons/fi";
 import { IoLocationOutline } from "react-icons/io5";
-import { Form } from "@/components";
-import { PageInfo } from "@/Interfaces/sanityInterfaces";
-import { fetchPageInfo } from "@/utils";
+import { Form } from "../components";
+import { PageInfo } from "../Interfaces/sanityInterfaces";
 
-async function getPageInfoData() {
-  const pageInfo: PageInfo = await fetchPageInfo();
+type Props = {
+  pageInfo: PageInfo;
+};
 
-  return {
-    pageInfo,
-  };
-}
-
-const data = getPageInfoData();
-
-export function Contact() {
-  const { pageInfo } = use(data);
+export function Contact({ pageInfo }: Props) {
   const { address, email, phoneNumber } = pageInfo;
 
   return (

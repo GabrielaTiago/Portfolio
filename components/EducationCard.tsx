@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { InstitutionPicture, Slider } from "@/components";
-import { Image as TImage, Skill } from "@/Interfaces/sanityInterfaces";
-import { urlFor } from "@/pages/api/sanity";
-import { formatDate } from "@/utils";
+import { InstitutionPicture, Slider } from "../components";
+import { Image as TImage, Skill } from "../Interfaces/sanityInterfaces";
+import { urlFor } from "../pages/api/sanity";
+import { formatDate } from "../utils";
 
 type Props = {
   institutionPicture: TImage;

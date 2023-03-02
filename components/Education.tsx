@@ -1,22 +1,12 @@
 import { motion } from "framer-motion";
-import { use } from "react";
-import { EducationCard } from "@/components";
-import { Education as TEducation } from "@/Interfaces/sanityInterfaces";
-import { fetchEducation } from "@/utils";
+import { EducationCard } from "../components";
+import { Education as TEducation } from "../Interfaces/sanityInterfaces";
 
-async function getEducationData() {
-  const education: TEducation[] = await fetchEducation();
+type Props = {
+  education: TEducation[];
+};
 
-  return {
-    education,
-  };
-}
-
-const data = getEducationData();
-
-export function Education() {
-  const { education } = use(data);
-
+export function Education({ education }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}

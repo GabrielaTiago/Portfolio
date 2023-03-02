@@ -1,22 +1,12 @@
 import { motion } from "framer-motion";
-import { use } from "react";
-import { AboutPicture } from "@/components";
-import { PageInfo } from "@/Interfaces/sanityInterfaces";
-import { fetchPageInfo } from "@/utils";
+import { AboutPicture } from "../components";
+import { PageInfo } from "../Interfaces/sanityInterfaces";
 
-async function getPageInfoData() {
-  const pageInfo: PageInfo = await fetchPageInfo();
+type Props = {
+  pageInfo: PageInfo;
+};
 
-  return {
-    pageInfo,
-  };
-}
-
-const data = getPageInfoData();
-
-export function About() {
-  const { pageInfo } = use(data);
-
+export function About({ pageInfo }: Props) {
   const { backgroundInfo, profilePicture } = pageInfo;
 
   return (

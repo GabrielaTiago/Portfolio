@@ -1,22 +1,12 @@
 import { motion } from "framer-motion";
-import { use } from "react";
-import { Skill } from "@/components";
-import { fetchSkills } from "@/utils";
-import { Skill as TSkill } from "@/Interfaces/sanityInterfaces";
+import { Skill } from "../components";
+import { Skill as TSkill } from "../Interfaces/sanityInterfaces";
 
-async function getSkillsData() {
-  const skills: TSkill[] = await fetchSkills();
+type Props = {
+  skills: TSkill[];
+};
 
-  return {
-    skills,
-  };
-}
-
-const data = getSkillsData();
-
-export function Skills() {
-  const { skills } = use(data);
-
+export function Skills({ skills }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}

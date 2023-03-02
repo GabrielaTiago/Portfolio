@@ -1,21 +1,11 @@
-import { use } from "react";
-import { Project } from "@/components";
-import { Project as TProject } from "@/Interfaces/sanityInterfaces";
-import { fetchProjects } from "@/utils";
+import { Project } from "../components";
+import { Project as TProject } from "../Interfaces/sanityInterfaces";
 
-async function getProjectsData() {
-  const projects: TProject[] = await fetchProjects();
+type Props = {
+  projects: TProject[];
+};
 
-  return {
-    projects,
-  };
-}
-
-const data = getProjectsData();
-
-export function Projects() {
-  const { projects } = use(data);
-
+export function Projects({ projects }: Props) {
   return (
     <div className="relative max-w-full h-screen px-[3%] mx-auto flex flex-col items-center justify-evenly text-left md:flex-row z-0 overflow-hidden">
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">

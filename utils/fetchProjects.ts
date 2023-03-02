@@ -1,4 +1,4 @@
-import { Project } from "@/Interfaces/sanityInterfaces";
+import { Project } from "../Interfaces/sanityInterfaces";
 
 export const fetchProjects = async () => {
   const response = await fetch(

@@ -1,21 +1,11 @@
-import { use } from "react";
-import { PageInfo } from "@/Interfaces/sanityInterfaces";
-import { fetchPageInfo } from "@/utils";
+import { PageInfo } from "../Interfaces/sanityInterfaces";
 import { BackgroundCircles, Picture, Typewriter } from "../components";
 
-async function getPageInfoData() {
-  const pageInfo: PageInfo = await fetchPageInfo();
+type Props = {
+  pageInfo: PageInfo;
+};
 
-  return {
-    pageInfo,
-  };
-}
-
-const data = getPageInfoData();
-
-export function Hero() {
-  const { pageInfo } = use(data);
-
+export function Hero({ pageInfo }: Props) {
   const { name, role, heroImage } = pageInfo;
 
   return (
