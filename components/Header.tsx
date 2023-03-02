@@ -1,22 +1,12 @@
-import { use } from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
-import { Social } from "@/Interfaces/sanityInterfaces";
-import { fetchSocials } from "@/utils";
+import { Social } from "../Interfaces/sanityInterfaces";
 
-async function getSocialsData() {
-  const socials: Social[] = await fetchSocials();
+type Props = {
+  socials: Social[];
+};
 
-  return {
-    socials,
-  };
-}
-
-const data = getSocialsData();
-
-export function Header() {
-  const { socials } = use(data);
-
+export function Header({ socials }: Props) {
   return (
     <header className="max-w-7xl mx-auto p-[3%] sticky top-0 flex flex-row justify-between z-20">
       <motion.div
