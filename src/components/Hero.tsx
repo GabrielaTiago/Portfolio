@@ -7,7 +7,7 @@ import { TextGenerateEffect } from './ui/TextGenerateEffect';
 // Components
 import MagicButton from './MagicButton';
 
-const Hero = () => {
+export const Hero = () => {
 	return (
 		<div className='pb-22 pt-36'>
 			<div>
@@ -41,5 +41,3 @@ const Hero = () => {
 		</div>
 	);
 };
-
-export default Hero;
