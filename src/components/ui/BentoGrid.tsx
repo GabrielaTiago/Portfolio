@@ -58,6 +58,11 @@ export const BentoGridItem = ({
 			{/* Tech stack */}
 			{id === 3 && <Techs />}
 
+			{/* Some card and Working project */}
+			<div className={`absolute -right-2 -bottom-5 ${id === 5 && 'w-full opacity-80'}`}>
+				{spareImg && <img src={spareImg} alt={spareImg} className='object-cover object-center w-full h-full' />}
+			</div>
+
 			{/* Content of the card (description, title)*/}
 			<div
 				className={cn(
