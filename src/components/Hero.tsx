@@ -5,7 +5,7 @@ import { Spotlight } from './ui/Spotlight';
 import { TextGenerateEffect } from './ui/TextGenerateEffect';
 
 // Components
-import MagicButton from './MagicButton';
+import { MagicButton } from './MagicButton';
 
 export const Hero = () => {
 	return (
