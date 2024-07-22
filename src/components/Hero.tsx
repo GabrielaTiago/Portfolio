@@ -1,11 +1,11 @@
-import { FaLocationArrow } from 'react-icons/fa6';
+import { IoIosSend } from 'react-icons/io';
 
 // Aceternity UI Components
 import { Spotlight } from './ui/Spotlight';
 import { TextGenerateEffect } from './ui/TextGenerateEffect';
 
 // Components
-import MagicButton from './MagicButton';
+import { MagicButton } from './MagicButton';
 
 export const Hero = () => {
 	return (
@@ -34,7 +34,7 @@ export const Hero = () => {
 					</p>
 
 					<a href='#about'>
-						<MagicButton title='Conheça meu trabalho' icon={<FaLocationArrow />} position='right' />
+						<MagicButton title='Conheça meu trabalho' icon={<IoIosSend />} position='right' />
 					</a>
 				</div>
 			</div>
