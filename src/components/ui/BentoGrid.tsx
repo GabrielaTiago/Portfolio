@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 // Utils
 import { cn } from '@/lib/utils';
 
@@ -39,6 +41,11 @@ export const BentoGridItem = ({
 				backgroundColor: 'linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)',
 			}}
 		>
+			{/* Components with imgs */}
+			<div className='w-full h-full absolute'>
+				{img && <img src={img} alt={img} className={cn(imgClassName, 'object-cover object-center')} />}
+			</div>
+
 			{/* Content of the card (description, title)*/}
 			<div
 				className={cn(
