@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 // Aceternity UI Components
+import { BackgroundGradient } from './BackgroundGradient';
 import { GridGlobe } from './GridGlobe';
 
 // Components
@@ -62,6 +63,13 @@ export const BentoGridItem = ({
 			<div className={`absolute -right-2 -bottom-5 ${id === 5 && 'w-full opacity-80'}`}>
 				{spareImg && <img src={spareImg} alt={spareImg} className='object-cover object-center w-full h-full' />}
 			</div>
+
+			{/* Background Gradient */}
+			{id === 6 && (
+				<BackgroundGradient>
+					<div className='absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl'></div>
+				</BackgroundGradient>
+			)}
 
 			{/* Content of the card (description, title)*/}
 			<div
