@@ -1,5 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 
+// Aceternity UI Components
+import { GridGlobe } from './GridGlobe';
+
 // Utils
 import { cn } from '@/lib/utils';
 
@@ -45,6 +48,9 @@ export const BentoGridItem = ({
 			<div className='w-full h-full absolute'>
 				{img && <img src={img} alt={img} className={cn(imgClassName, 'object-cover object-center')} />}
 			</div>
+
+			{/* Globe */}
+			{id === 2 && <GridGlobe />}
 
 			{/* Content of the card (description, title)*/}
 			<div
