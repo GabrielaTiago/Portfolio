@@ -3,6 +3,9 @@
 // Aceternity UI Components
 import { GridGlobe } from './GridGlobe';
 
+// Components
+import { Techs } from '../Techs';
+
 // Utils
 import { cn } from '@/lib/utils';
 
@@ -51,6 +54,9 @@ export const BentoGridItem = ({
 
 			{/* Globe */}
 			{id === 2 && <GridGlobe />}
+
+			{/* Tech stack */}
+			{id === 3 && <Techs />}
 
 			{/* Content of the card (description, title)*/}
 			<div
