@@ -1,8 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from 'next/link';
 
 // Aceternity UI Components
 import { BackgroundGradient } from './BackgroundGradient';
 import { GridGlobe } from './GridGlobe';
+import { MagicButton } from '../MagicButton';
+
+// Icons
+import { IoIosSend } from 'react-icons/io';
 
 // Components
 import { Techs } from '../Techs';
@@ -49,7 +54,7 @@ export const BentoGridItem = ({
 			}}
 		>
 			{/* Components with imgs */}
-			<div className='w-full h-full absolute'>
+			<div className={`w-full h-full absolute ${id === 6 && 'flex justify-center'}`}>
 				{img && <img src={img} alt={img} className={cn(imgClassName, 'object-cover object-center')} />}
 			</div>
 
@@ -67,7 +72,7 @@ export const BentoGridItem = ({
 			{/* Background Gradient */}
 			{id === 6 && (
 				<BackgroundGradient>
-					<div className='absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl'></div>
+					<div className='absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl' />
 				</BackgroundGradient>
 			)}
 
@@ -80,6 +85,12 @@ export const BentoGridItem = ({
 			>
 				<div className='font-sans font-extralight text-sm md:max-w-48 md:text-xs lg:text-base text-[#C1C2D3]'>{description}</div>
 				<div className='font-sans text-lg lg:text-2xl max-w-md font-bold'>{title}</div>
+
+				{id === 6 && (
+					<Link href='/contact'>
+						<MagicButton title={'Entrar em contato'} icon={<IoIosSend />} position='right' otherClasses='!bg-[#161A31]' />
+					</Link>
+				)}
 			</div>
 		</div>
 	);
