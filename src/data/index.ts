@@ -151,3 +151,39 @@ export const workExperience = [
 	// 	thumbnail: '/exp4.svg',
 	// },
 ];
+
+export const approachHeading = 'Minha ';
+export const approachHeadingHighlight = 'abordagem';
+
+export const approachs = [
+	{
+		id: 1,
+		order: 'Fase 1',
+		title: 'Planejamento e Estratégia',
+		desc: 'Colaboraremos para mapear os objetivos, o público-alvo e as principais funcionalidades do seu site. Discutiremos sobre estrutura, navegação e requisitos fundamentais.',
+		className: 'bg-emerald-900',
+		animationSpeed: 5.1,
+		colors: [[0, 255, 255]],
+	},
+	{
+		id: 2,
+		order: 'Fase 2',
+		title: 'Desenvolvimento e Atualização de Progresso',
+		desc: 'Aqui é onde a mágica acontece! Com base no design aprovado, eu coloco minha playlist favorita traduzirei tudo em código funcional, construindo seu site do zero.',
+		className: 'bg-pink-900',
+		animationSpeed: 3,
+		colors: [
+			[255, 166, 158],
+			[221, 255, 247],
+		],
+	},
+	{
+		id: 3,
+		order: 'Fase 3',
+		title: 'Entrega e Lançamento',
+		desc: 'Após a conclusão do desenvolvimento, asseguro que tudo esteja perfeito para a entrega. Realizo testes minuciosos e ajustes finais, mantendo você informado até o lançamento do produto final.',
+		className: 'bg-sky-600',
+		animationSpeed: 3,
+		colors: [[125, 211, 252]],
+	},
+];
