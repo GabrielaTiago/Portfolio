@@ -117,3 +117,37 @@ export const projects = [
 		link: 'https://cineflex-gabrielatiago.vercel.app',
 	},
 ];
+
+export const workHeadingTitle = 'Minhas ';
+export const workHeadingHighlight = 'experinências profissionais';
+
+export const workExperience = [
+	{
+		id: 1,
+		title: 'Desenvolvedora Web Full Stack - Banco do Brasil',
+		desc: 'Trabalho no desenvolvimento da plataforma web interna do setor de Consórcios, utiizando React.js, JavaScript, Java, Spring Boot e PostgreSQL',
+		className: 'md:col-span-2',
+		thumbnail: '/exp1.svg',
+	},
+	{
+		id: 2,
+		title: 'Desenvolvedora de Chatbots - KRMV Gestão e Desenvolvimento',
+		desc: 'Projetei e desenvolvi fluxogramas para robôs de WhatsApp, criando estratégias de interação eficazes, otimizando a comunicação e a eficiência no atendimento',
+		className: 'md:col-span-2',
+		thumbnail: '/exp2.svg',
+	},
+	{
+		id: 3,
+		title: 'Desenvolvedora Freelance',
+		desc: 'Desenvolvimento especializado em sistemas web. Criei sistemas completos e robôs para automação de processos. Trabalhando desde o conceito inicial até o deploy.',
+		className: 'md:col-span-2',
+		thumbnail: '/exp3.svg',
+	},
+	// {
+	// 	id: 4,
+	// 	title: 'Vem aí',
+	// 	desc: 'Se liga hein... fica ligado',
+	// 	className: 'md:col-span-2',
+	// 	thumbnail: '/exp4.svg',
+	// },
+];
