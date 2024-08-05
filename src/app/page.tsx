@@ -3,8 +3,9 @@ import { FloatingNav } from '@/components/ui/FloatingNavbar';
 
 // Components
 import { Approach } from '@/components/Approach';
-import { Hero } from '@/components/Hero';
+import { Footer } from '@/components/Footer';
 import { Grid } from '@/components/Grid';
+import { Hero } from '@/components/Hero';
 import { MainProjects } from '@/components/MainProjects';
 import { Work } from '@/components/Work';
 
@@ -21,6 +22,7 @@ export default function Home() {
 				<MainProjects />
 				<Work />
 				<Approach />
+				<Footer />
 			</div>
 		</main>
 	);

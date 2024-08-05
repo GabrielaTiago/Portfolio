@@ -187,3 +187,14 @@ export const approachs = [
 		colors: [[125, 211, 252]],
 	},
 ];
+
+export const footerHeadingP1 = 'Pronto para levar';
+export const footerHighlight = ' suas ideias ';
+export const footerHeadingP2 = 'para o próximo nível?';
+export const footerTxt = 'Entre em contato comigo agora e vamos discutir como posso te ajudar a atingir seus objetivos';
+export const footerTxtBtn = 'Vamos conversar!';
+
+export const socialMedia = [
+	{ id: 1, img: '/git.svg', link: 'https://github.com/GabrielaTiago' },
+	{ id: 2, img: '/link.svg', link: 'https://www.linkedin.com/in/gabrielatiago/' },
+];
