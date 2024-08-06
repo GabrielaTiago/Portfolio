@@ -2,7 +2,7 @@ export const navItems = [
 	{ name: 'Sobre', link: '#about' },
 	{ name: 'Projetos', link: '#projects' },
 	{ name: 'Experiência', link: '#workexperience' },
-	{ name: 'Contato', link: '#contact' },
+	{ name: 'Contato', link: '/contact' },
 ];
 
 export const gridItems = [
@@ -198,3 +198,7 @@ export const socialMedia = [
 	{ id: 1, img: '/git.svg', link: 'https://github.com/GabrielaTiago' },
 	{ id: 2, img: '/link.svg', link: 'https://www.linkedin.com/in/gabrielatiago/' },
 ];
+
+export const contactHeading = 'Eu tenho o que você precisa!';
+export const contactPhone = '+55 62 99176-9161';
+export const contactAddress = 'Brasília, DF, Brasil';
