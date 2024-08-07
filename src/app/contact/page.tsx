@@ -9,6 +9,7 @@ import { Label, LabelInputContainer } from '@/components/ui/Label';
 import { MagicButton } from '@/components/MagicButton';
 import { TextArea } from '@/components/ui/TextArea';
 import { contactAddress, contactHeading, contactPhone } from '@/data';
+import { sendEmail } from '@/lib/mail';
 
 interface ContactData {
 	name: string;
@@ -28,9 +29,17 @@ export default function Contact() {
 		setData((prev) => ({ ...prev, [id]: value }));
 	};
 
-	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		console.log('Form submitted');
+		setLoading(true);
+
+		try {
+			await sendEmail(data);
+		} catch (error) {
+			console.error(error);
+		} finally {
+			setLoading(false);
+		}
 	};
 
 	return (
