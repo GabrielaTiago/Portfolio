@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/spinner": "^2.1.0",
     "@radix-ui/react-label": "^2.1.0",
     "@react-three/drei": "^9.108.4",
     "@react-three/fiber": "^8.16.8",
