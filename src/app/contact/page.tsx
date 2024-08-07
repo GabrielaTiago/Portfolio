@@ -1,5 +1,6 @@
 'use client';
-import { FormEvent } from 'react';
+import { Spinner } from '@chakra-ui/spinner';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import { FaHome } from 'react-icons/fa';
 import { IoIosMail } from 'react-icons/io';
 import { RiSmartphoneFill } from 'react-icons/ri';
@@ -9,7 +10,24 @@ import { MagicButton } from '@/components/MagicButton';
 import { TextArea } from '@/components/ui/TextArea';
 import { contactAddress, contactHeading, contactPhone } from '@/data';
 
+interface ContactData {
+	name: string;
+	email: string;
+	subject: string;
+	message: string;
+}
+
+const initState: ContactData = { name: '', email: '', subject: '', message: '' };
+
 export default function Contact() {
+	const [data, setData] = useState<ContactData>(initState);
+	const [loading, setLoading] = useState<boolean>(false);
+
+	const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+		const { id, value } = e.target;
+		setData((prev) => ({ ...prev, [id]: value }));
+	};
+
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		console.log('Form submitted');
@@ -33,23 +51,29 @@ export default function Contact() {
 					<div className='flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2'>
 						<LabelInputContainer>
 							<Label htmlFor='name'>Nome</Label>
-							<Input id='name' placeholder='' type='text' />
+							<Input id='name' placeholder='' type='text' required onChange={handleChange} />
 						</LabelInputContainer>
 						<LabelInputContainer>
 							<Label htmlFor='email'>Seu Email</Label>
-							<Input id='email' placeholder='' type='email' />
+							<Input id='email' placeholder='' type='email' required onChange={handleChange} />
 						</LabelInputContainer>
 					</div>
 					<LabelInputContainer>
 						<Label htmlFor='subject'>Assunto</Label>
-						<Input id='subject' placeholder='' type='text' />
+						<Input id='subject' placeholder='' type='text' required onChange={handleChange} />
 					</LabelInputContainer>
 					<LabelInputContainer>
 						<Label htmlFor='message'>Mensagem</Label>
-						<TextArea id='message' placeholder='' />
+						<TextArea id='message' placeholder='' required onChange={handleChange} />
 					</LabelInputContainer>
 
-					<MagicButton title='Enviar' icon={<IoIosMail />} position='right' type='submit' />
+					<MagicButton
+						title={!loading ? 'Enviar' : ''}
+						icon={!loading ? <IoIosMail /> : <Spinner className='h-4 w-4' />}
+						position='right'
+						type='submit'
+						disabled={loading}
+					/>
 				</form>
 			</div>
 		</main>
