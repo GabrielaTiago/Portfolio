@@ -3,11 +3,18 @@ import { ReactElement } from 'react';
 import { Resend } from 'resend';
 import { EmailTemplate } from '@/components/EmailTemplate';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req: NextRequest) {
 	const { name, email, subject, message } = await req.json();
 	const host = process.env.EMAIL as string;
+
+	// Create the Resend client lazily so builds don't fail when the API key is missing in local or CI environments.
+	const apiKey = process.env.RESEND_API_KEY;
+	if (!apiKey) {
+		console.error('RESEND_API_KEY is not set. Skipping send.');
+		return Response.json({ error: 'Missing API key' }, { status: 500 });
+	}
+
+	const resend = new Resend(apiKey);
 
 	try {
 		const { data, error } = await resend.emails.send({
@@ -24,6 +31,7 @@ export async function POST(req: NextRequest) {
 
 		return Response.json({ data, message: 'Email sent' });
 	} catch (error) {
+		console.error(error);
 		return Response.json({ error }, { status: 500 });
 	}
 }
