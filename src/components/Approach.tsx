@@ -1,5 +1,10 @@
-import { AceternityIcon, CanvasRevealEffect, Card } from './ui/CanvasRevealEffect';
+import dynamic from 'next/dynamic';
+import { AceternityIcon, Card } from './ui/CanvasRevealEffect';
 import { approachHeading, approachHeadingHighlight, approachs } from '@/data';
+
+const CanvasRevealEffect = dynamic(() => import('./ui/CanvasRevealEffect').then((m) => m.CanvasRevealEffect), {
+	ssr: false,
+});
 
 export function Approach() {
 	return (
