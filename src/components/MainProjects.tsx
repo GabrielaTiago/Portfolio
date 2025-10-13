@@ -31,10 +31,11 @@ export function MainProjects() {
 							<CardItem translateZ='100' className='w-full mt-8'>
 								<Image
 									src={img}
-									height='1000'
-									width='1000'
+									height={1000}
+									width={1000}
 									className='h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl'
 									alt={`bg ${title}`}
+									unoptimized={typeof img === 'string' && img.toLowerCase().endsWith('.gif')}
 								/>
 							</CardItem>
 
