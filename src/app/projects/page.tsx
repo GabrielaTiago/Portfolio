@@ -23,34 +23,31 @@ export default function Projects() {
 	const [loading, setLoading] = useState(true);
 	const [activeFilter, setActiveFilter] = useState('');
 
-	useEffect(() => {
-		async function fetchGithubRepos() {
-			try {
-				const response = await fetch('https://api.github.com/users/GabrielaTiago/repos');
-				const data = await response.json();
+	async function fetchGithubRepos() {
+		try {
+			const response = await fetch('https://api.github.com/users/GabrielaTiago/repos');
+			const data = await response.json();
 
-				// Filter repos: exclude readme, Portfolio, and ensure they have description
-				const filteredRepos = data.filter(
-					(repo: Repository) =>
-						repo.description &&
-						repo.description.trim() !== '' &&
-						repo.name !== 'GabrielaTiago' &&
-						repo.name !== 'Portfolio'
-				);
-				// Sort repositories by creation date (oldest first)
-				const sortedRepos = filteredRepos.sort(
-					(a: Repository, b: Repository) => new Date(a.updated_at).getTime() - new Date(b.updated_at).getTime()
-				);
+			// Filter repos: exclude readme, Portfolio, and ensure they have description
+			const filteredRepos = data.filter(
+				(repo: Repository) =>
+					repo.description && repo.description.trim() !== '' && repo.name !== 'GabrielaTiago' && repo.name !== 'Portfolio'
+			);
+			// Sort repositories by creation date (oldest first)
+			const sortedRepos = filteredRepos.sort(
+				(a: Repository, b: Repository) => new Date(a.updated_at).getTime() - new Date(b.updated_at).getTime()
+			);
 
-				setRepos(sortedRepos);
-				setOriginalRepos(sortedRepos);
-			} catch (error) {
-				console.error('Error fetching repos:', error);
-			} finally {
-				setLoading(false);
-			}
+			setRepos(sortedRepos);
+			setOriginalRepos(sortedRepos);
+		} catch (error) {
+			console.error('Error fetching repos:', error);
+		} finally {
+			setLoading(false);
 		}
+	}
 
+	useEffect(() => {
 		fetchGithubRepos();
 	}, []);
 
@@ -63,7 +60,7 @@ export default function Projects() {
 	}
 
 	return (
-		<main className='relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto p-5 lg:p-10 gap-12'>
+		<main className='min-h-screen bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto p-5 lg:p-10 gap-12 '>
 			<h1 className='mt-10 text-4xl font-bold text-center text-purple'>Meus Projetos no GitHub</h1>
 
 			<section className='text-center flex flex-wrap justify-center gap-6 flex-row'>
