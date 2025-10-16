@@ -45,10 +45,10 @@ export default function Contact() {
 	return (
 		<main className='bg-black-100 h-screen flex justify-center items-center flex-col mx-auto py-10 px-5 lg:px-10'>
 			<div className='max-w-md w-full h-fit rounded-3xl p-6 md:p-8 shadow-input border dark:border-white/[0.2] border-black/[0.1]'>
-				<h2 className='font-bold text-xl text-neutral-800 dark:text-neutral-200 text-center'>{contactHeading}</h2>
+				<h2 className='font-bold text-2xl text-neutral-800 dark:text-neutral-200 text-center mt-4'>{contactHeading}</h2>
 
-				<div className='mt-5 flex flex-col justify-center items-center gap-1 text-white-100 dark:text-neutral-300 text-base'>
-					<span className='flex items-center gap-2'>
+				<div className='mt-5 flex flex-col justify-center items-center gap-2 text-white-100 dark:text-neutral-300 text-base'>
+					<span className='flex items-center gap-4'>
 						<FaHome className='text-purple' width={8} height={8} /> {contactAddress}
 					</span>
 					<span className='flex items-center gap-2'>
@@ -77,8 +77,8 @@ export default function Contact() {
 					</LabelInputContainer>
 
 					<MagicButton
-						title={!loading ? 'Enviar' : ''}
-						icon={!loading ? <IoIosMail /> : <Spinner className='h-4 w-4' />}
+						title={loading ? 'Enviando' : 'Enviar'}
+						icon={loading ? <Spinner className='h-4 w-4' /> : <IoIosMail />}
 						position='right'
 						type='submit'
 						disabled={loading}
