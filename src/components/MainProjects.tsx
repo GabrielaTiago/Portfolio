@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { RiExternalLinkLine } from 'react-icons/ri';
+import { GoProjectSymlink } from 'react-icons/go';
 import { CardBody, CardContainer, CardItem } from './ui/3dCard';
 import { projects, projectsHeadingHighlight, projectsHeadingTitle } from '@/data';
 import { AnimatedTooltip } from './ui/AnimatedTooltip';
@@ -61,6 +62,14 @@ export function MainProjects() {
 					</CardContainer>
 				))}
 			</div>
+
+			<Link
+				href='/projects'
+				className='mt-20 inline-flex items-center gap-2 px-6 py-3 text-sm lg:text-base backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300 transition-colors'
+			>
+				Ver todos os projetos
+				<GoProjectSymlink size={20} />
+			</Link>
 		</section>
 	);
 }
