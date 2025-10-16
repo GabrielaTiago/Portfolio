@@ -8,7 +8,7 @@ export const navItems = [
 export const gridItems = [
 	{
 		id: 1,
-		title: 'Priorizo o contato com o cliente, promovendo a comunicação aberta',
+		title: 'Desenvolvendo soluções com foco nas necessidades do cliente',
 		description: '',
 		className: 'lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[55vh]',
 		imgClassName: 'w-full h-full',
@@ -18,7 +18,7 @@ export const gridItems = [
 	},
 	{
 		id: 2,
-		title: 'Sou flexível com comunicações em diferentes fusos',
+		title: 'Disponível para colaboração remota',
 		description: '',
 		className: 'lg:col-span-2 md:col-span-3 md:row-span-2',
 		imgClassName: '',
@@ -28,8 +28,8 @@ export const gridItems = [
 	},
 	{
 		id: 3,
-		title: 'Minhas principais tecnologias',
-		description: 'Sempre me desenvolvendo',
+		title: 'Principais tecnologias que domino',
+		description: 'Sempre aprendendo',
 		className: 'lg:col-span-2 md:col-span-3 md:row-span-2',
 		imgClassName: '',
 		titleClassName: 'justify-center lg:max-w-72',
@@ -38,7 +38,7 @@ export const gridItems = [
 	},
 	{
 		id: 4,
-		title: 'Entusiasta de tecnologia com paixão por desenvolvimento',
+		title: 'Buscando inovação através do código',
 		description: '',
 		className: 'lg:col-span-2 md:col-span-3 md:row-span-1',
 		imgClassName: '',
@@ -48,7 +48,7 @@ export const gridItems = [
 	},
 	{
 		id: 5,
-		title: 'Atualmente estou construindo um sistema para controle de manutenções veiculares',
+		title: 'Projeto em desenvolvimento: Sistema de gestão de manutenção veicular',
 		description: 'Em primeira mão',
 		className: 'md:col-span-3 md:row-span-2',
 		imgClassName: 'absolute right-0 bottom-0 md:w-96 w-60',
@@ -70,10 +70,10 @@ export const gridItems = [
 
 export const mainTechnologies = {
 	leftLists: ['ReactJS', 'NodeJS', 'Java'],
-	rightLists: ['TS', 'Python', 'C#'],
+	rightLists: ['TS', 'Next.js', 'C#'],
 };
 
-export const projectsHeadingTitle = 'Uma pequena seleção dos meus ';
+export const projectsHeadingTitle = 'Alguns dos meus ';
 export const projectsHeadingHighlight = 'projetos xodozinhos';
 
 export const projects = [
@@ -124,32 +124,32 @@ export const workHeadingHighlight = 'experinências profissionais';
 export const workExperience = [
 	{
 		id: 1,
+		title: 'System Support Engineer - Thoughtworks',
+		desc: 'Trabalho com suporte técnico e desenvolvimento de soluções para garantir a eficiência dos sistemas de TI dos clientes. AWS, Kubernetes, Docker, Linux, SQL, Java, Prometheus, Grafana.',
+		className: 'md:col-span-2',
+		thumbnail: '/exp4.svg',
+	},
+	{
+		id: 2,
 		title: 'Desenvolvedora Web Full Stack - Banco do Brasil',
-		desc: 'Trabalho no desenvolvimento da plataforma web interna do setor de Consórcios, utiizando React.js, JavaScript, Java, Spring Boot e PostgreSQL',
+		desc: 'Trabalhei no desenvolvimento da plataforma web interna do setor de Consórcios, utiizando React.js, JavaScript, Java, Spring Boot e PostgreSQL',
 		className: 'md:col-span-2',
 		thumbnail: '/exp1.svg',
 	},
 	{
-		id: 2,
+		id: 4,
+		title: 'Desenvolvedora Frontend Freelance',
+		desc: 'Desenvolvi um sistema de gerenciamento de trabalhadores utilizando TypeScript e Next.js, implementando funcionalidades de cadastro, controle e monitoramento de colaboradores',
+		className: 'md:col-span-2',
+		thumbnail: '/exp3.svg',
+	},
+	{
+		id: 3,
 		title: 'Desenvolvedora de Chatbots - KRMV Gestão e Desenvolvimento',
 		desc: 'Projetei e desenvolvi fluxogramas para robôs de WhatsApp, criando estratégias de interação eficazes, otimizando a comunicação e a eficiência no atendimento',
 		className: 'md:col-span-2',
 		thumbnail: '/exp2.svg',
 	},
-	{
-		id: 3,
-		title: 'Desenvolvedora Freelance',
-		desc: 'Desenvolvimento especializado em sistemas web. Criei sistemas completos e robôs para automação de processos. Trabalhando desde o conceito inicial até o deploy.',
-		className: 'md:col-span-2',
-		thumbnail: '/exp3.svg',
-	},
-	// {
-	// 	id: 4,
-	// 	title: 'Vem aí',
-	// 	desc: 'Se liga hein... fica ligado',
-	// 	className: 'md:col-span-2',
-	// 	thumbnail: '/exp4.svg',
-	// },
 ];
 
 export const approachHeading = 'Minha ';
@@ -160,7 +160,7 @@ export const approachs = [
 		id: 1,
 		order: 'Fase 1',
 		title: 'Planejamento e Estratégia',
-		desc: 'Colaboraremos para mapear os objetivos, o público-alvo e as principais funcionalidades do seu site. Discutiremos sobre estrutura, navegação e requisitos fundamentais.',
+		desc: 'Definimos juntos a visão estratégica do projeto, mapeando objetivos, público-alvo e funcionalidades essenciais. Criamos um plano detalhado de arquitetura, experiência do usuário e requisitos técnicos para garantir um resultado excepcional.',
 		className: 'bg-emerald-900',
 		animationSpeed: 5.1,
 		colors: [[0, 255, 255]],
@@ -169,7 +169,7 @@ export const approachs = [
 		id: 2,
 		order: 'Fase 2',
 		title: 'Desenvolvimento e Atualização de Progresso',
-		desc: 'Aqui é onde a mágica acontece! Com base no design aprovado, eu coloco minha playlist favorita traduzirei tudo em código funcional, construindo seu site do zero.',
+		desc: 'Transformo o planejamento em realidade através de código limpo e eficiente. Com atualizações regulares sobre o progresso, mantenho total transparência durante todo o processo de desenvolvimento, garantindo que suas expectativas sejam atendidas.',
 		className: 'bg-pink-900',
 		animationSpeed: 3,
 		colors: [
@@ -181,7 +181,7 @@ export const approachs = [
 		id: 3,
 		order: 'Fase 3',
 		title: 'Entrega e Lançamento',
-		desc: 'Após a conclusão do desenvolvimento, asseguro que tudo esteja perfeito para a entrega. Realizo testes minuciosos e ajustes finais, mantendo você informado até o lançamento do produto final.',
+		desc: 'Executo uma série rigorosa de testes de qualidade e otimizações finais para garantir um produto impecável. Ofereço suporte completo durante o lançamento e período inicial de operação, assegurando uma transição suave para seu novo projeto.',
 		className: 'bg-sky-600',
 		animationSpeed: 3,
 		colors: [[125, 211, 252]],
